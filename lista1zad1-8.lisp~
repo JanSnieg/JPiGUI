@@ -39,6 +39,6 @@
 (print (rozw 0 0 0))
 
 (defun usun-liczby (L)
-  (remove 'numberp 'L))
+  (remove-if #'(lambda (X) (numberp)) L)
 
 (print (usun-liczby '(4 x -4 y 2 z -2 t 3 -3))

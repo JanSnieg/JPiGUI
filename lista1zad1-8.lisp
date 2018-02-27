@@ -1,3 +1,4 @@
+;ZADANIE 1
 (defun f ( x)
   (* x x x x))
 
@@ -5,7 +6,7 @@
 (print(f 3))
 (print(f 12))
 
-
+;ZADANIE 2
 (defun wiekszy(a b)
   (if (< a b)
       b a))
@@ -13,6 +14,7 @@
 (print (wiekszy 2 5))
 (print (wiekszy 4 1))
 
+;ZADANIE 3
 (defun rozw (a b c)
   (if (= a 0)
       (if (= b 0)
@@ -38,7 +40,28 @@
 (print (rozw 1 2 0))
 (print (rozw 0 0 0))
 
-(defun usun-liczby (L)
-  (remove-if #'(lambda (X) (numberp)) L)
+;ZADANIE 4
+(defun dzien(n)
+  (case n 
+    ((0 7) 'Niedziela)
+    (1 'Poniedzialek)
+    (2 'Wtorek)
+    (3 'Sroda)
+    (4 'Czwartek)
+    (5 'Piatek)
+    (6 'Sobota))
+)
 
-(print (usun-liczby '(4 x -4 y 2 z -2 t 3 -3))
+(print (dzien 7))
+
+;ZADANIE 5
+(defun usun-liczby (L)
+  (remove-if #'numberp L)
+)
+(defun usun-dodatnie (L)
+  (remove-if #'(lambda (X) (> 0 X)) L)
+)
+
+
+(print (usun-liczby '(4 x -4 y 2 z -2 t 3 -3)))
+;(print (usun-dodatnie '(4 x -4 y 2 z -2 t 3 -3)))
