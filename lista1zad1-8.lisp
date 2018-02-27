@@ -58,10 +58,16 @@
 (defun usun-liczby (L)
   (remove-if #'numberp L)
 )
+
 (defun usun-dodatnie (L)
-  (remove-if #'(lambda (X) (> 0 X)) L)
+  (remove-if #'(lambda (X) (and (numberp X) (< 0 X))) L)
 )
 
 
 (print (usun-liczby '(4 x -4 y 2 z -2 t 3 -3)))
-;(print (usun-dodatnie '(4 x -4 y 2 z -2 t 3 -3)))
+(print (usun-dodatnie '(4 x -4 y 2 z -2 t 3 -3)))
+
+;ZADANIE 6
+(defun rozklad (n)
+  
+)
