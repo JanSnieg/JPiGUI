@@ -69,5 +69,38 @@
 
 ;ZADANIE 6
 (defun rozklad (n)
-  
+  (if (< n 2) 
+      NIL 
+    (let (lista d)
+      (setq lista nil)
+      (setq d 2)
+      (loop 
+       (if (= 0 (mod n d))
+           (progn 
+             (setq n (/ n d))
+             (setq lista (append lista (list d)))
+             )
+         (setq d (+ d 1))
+         )
+       (when (= n 1) (return lista))
+       )
+      )
+    )
+  )
+
+(print (rozklad 1))
+(print (rozklad 6))
+(print (rozklad 24))
+(print (rozklad 15))
+
+
+(defun wykres (f a b)
+  (with-open-file (stream "wykres.txt" :direction :output)
+    (loop for i from a to b do
+          (setq x i)
+          (format stream "~D ~F~C~C" x (eval f)#\return #\linefeed)
+          )
+    )
 )
+
+(wykres '(+ (sin x)) -10 10)
