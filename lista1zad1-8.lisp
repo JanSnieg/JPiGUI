@@ -2,17 +2,17 @@
 (defun f ( x)
   (* x x x x))
 
-(print(f 2))
-(print(f 3))
-(print(f 12))
+;(print(f 2))
+;(print(f 3))
+;(print(f 12))
 
 ;ZADANIE 2
 (defun wiekszy(a b)
   (if (< a b)
       b a))
 
-(print (wiekszy 2 5))
-(print (wiekszy 4 1))
+;(print (wiekszy 2 5))
+;(print (wiekszy 4 1))
 
 ;ZADANIE 3
 (defun rozw (a b c)
@@ -35,10 +35,10 @@
   )
 )
 
-(print (rozw 1 0 1))
-(print (rozw 1 2 1))
-(print (rozw 1 2 0))
-(print (rozw 0 0 0))
+;(print (rozw 1 0 1))
+;(print (rozw 1 2 1))
+;(print (rozw 1 2 0))
+;(print (rozw 0 0 0))
 
 ;ZADANIE 4
 (defun dzien(n)
@@ -52,7 +52,7 @@
     (6 'Sobota))
 )
 
-(print (dzien 7))
+;(print (dzien 7))
 
 ;ZADANIE 5
 (defun usun-liczby (L)
@@ -64,8 +64,8 @@
 )
 
 
-(print (usun-liczby '(4 x -4 y 2 z -2 t 3 -3)))
-(print (usun-dodatnie '(4 x -4 y 2 z -2 t 3 -3)))
+;(print (usun-liczby '(4 x -4 y 2 z -2 t 3 -3)))
+;(print (usun-dodatnie '(4 x -4 y 2 z -2 t 3 -3)))
 
 ;ZADANIE 6
 (defun rozklad (n)
@@ -88,19 +88,7 @@
     )
   )
 
-(print (rozklad 1))
-(print (rozklad 6))
-(print (rozklad 24))
-(print (rozklad 15))
-
-
-(defun wykres (f a b)
-  (with-open-file (stream "wykres.txt" :direction :output)
-    (loop for i from a to b do
-          (setq x i)
-          (format stream "~D ~F~C~C" x (eval f)#\return #\linefeed)
-          )
-    )
-)
-
-(wykres '(+ (sin x)) -10 10)
+;(print (rozklad 1))
+;(print (rozklad 6))
+;(print (rozklad 24))
+;(print (rozklad 167852))
