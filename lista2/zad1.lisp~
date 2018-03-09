@@ -1,0 +1,6 @@
+(defmacro plus (&rest numbers)
+  `(+ ,@numbers)
+;(cons '*numbers)
+)
+
+(print (plus 2 3 4 5))
