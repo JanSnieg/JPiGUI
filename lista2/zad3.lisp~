@@ -1,0 +1,3 @@
+(defmacro zwieksz2(&rest args)
+	(cons 'progn (mapcar (lambda (x) `(setq ,x (expt ,x 2))) args))
+)
