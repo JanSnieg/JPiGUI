@@ -1,7 +1,5 @@
-(defmacro ++1(&rest numbers)
-;(list 'setq (mapcar #'+1 (list + numbers 1)))
-  (cons 'progn (mapcar (lambda (x) (list 'incf x)) numbers))
+(defun above (n)
+  (return (lambda (x) (if (< x n)))
 )
 
-(print (macroexpand '(++1 x y z)))
-(print (macroexpand '(++1 a)))
+(print (above 3))

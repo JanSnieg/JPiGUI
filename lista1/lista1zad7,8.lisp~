@@ -1,3 +1,16 @@
+;ZADANIE 7
+(defun wykres (f a b)
+  (with-open-file (stream "/Users/jansnieg/Documents/ISSP6/JPiGUI/wykres.txt" :direction :output)
+    (loop for i from a to b do
+          (setq x i)
+          (format stream "~D     ~F~C~C" x (eval f)#\return #\linefeed)
+          )
+   )
+)
+
+(wykres '(+ (sin x)) -10 10)
+
+
 ;ZADANIE 8
 (defun df (f)
   (cond
@@ -11,6 +24,12 @@
           ('* `(+ '(* ,(df (car args)), u) (* ,(car args) ,(df u))))
           ('/ `(/ (- (* ,(df (car args)), u) (* , (car args), (df u))), (expt u 2)))
           ('sin (cons 'cos args))
+          ('cos (cons '-sin args))
+          ('exp (cons 'exp args))
+          ('expt (cons 'expt args))
+          ;('log (cons 1/'args))
+          ;('tan (cons '(/ 1 (* cos cos))))
+          
           )
         )
       )
@@ -19,4 +38,4 @@
 
 (print (df '(- x 3)))
 (print (df '(* x 3)))
-(print(df '(+ 2 (sin x))))
+(print (df '(+ x (* (sin x) (cos x)))))
