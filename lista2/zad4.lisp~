@@ -1,0 +1,29 @@
+(defclass punkt ()
+  ((x :accesor punkt-x)
+   (y :accesor punkt-y))
+)
+
+(defclass kolo(punkt)
+  (r :accesor kolo-r)
+)
+(defclass prostokat (punkt)
+  ((a :accesor prostokat-a)
+   (b :accesor prostokat-b))
+)
+
+(setf item (make-instance 'punkt))
+(setf (punkt-x item) 10)
+(setf (punkt-y item) 10)
+(setf kolo1 (make-instance 'kolo))
+(setf (kolo-r kolo1) 5)
+(setf prosto (make-instance 'prostokat))
+(setf (prostokat-a prosto) 1000)
+(setf (prostokat-b prosto) 200)
+
+; displaying values
+
+(format t "Length of the Wooden Box is ~d~%" (box-length item))
+(format t "Breadth of the Wooden Box is ~d~%" (box-breadth item))
+(format t "Height of the Wooden Box is ~d~%" (box-height item))
+(format t "Volume of the Wooden Box is ~d~%" (volume item))
+(format t "Price of the Wooden Box is ~d~%" (box-price item))
