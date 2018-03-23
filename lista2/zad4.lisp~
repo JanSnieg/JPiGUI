@@ -1,29 +1,73 @@
 (defclass punkt ()
-  ((x :accesor punkt-x)
-   (y :accesor punkt-y))
+  ((x :accessor punkt-x)
+   (y :accessor punkt-y))
 )
 
 (defclass kolo(punkt)
-  (r :accesor kolo-r)
+  ((r :accessor kolo-r))
 )
 (defclass prostokat (punkt)
-  ((a :accesor prostokat-a)
-   (b :accesor prostokat-b))
+  ((a :accessor prostokat-a)
+   (b :accessor prostokat-b))
 )
 
-(setf item (make-instance 'punkt))
-(setf (punkt-x item) 10)
-(setf (punkt-y item) 10)
-(setf kolo1 (make-instance 'kolo))
-(setf (kolo-r kolo1) 5)
-(setf prosto (make-instance 'prostokat))
-(setf (prostokat-a prosto) 1000)
-(setf (prostokat-b prosto) 200)
+(defgeneric pole (obj))
 
-; displaying values
+(defmethod pole ((obj kolo))
+   (* pi (expt (kolo-r obj) 2))
+ )
+ 
+(defmethod pole ((obj prostokat))
+   (* (prostokat-a obj) (prostokat-b obj))
+)
 
-(format t "Length of the Wooden Box is ~d~%" (box-length item))
-(format t "Breadth of the Wooden Box is ~d~%" (box-breadth item))
-(format t "Height of the Wooden Box is ~d~%" (box-height item))
-(format t "Volume of the Wooden Box is ~d~%" (volume item))
-(format t "Price of the Wooden Box is ~d~%" (box-price item))
+(defgeneric odl (punkt-a punkt-b))
+ 
+(defmethod odl ((prostokat-a punkt)(prostokat-b punkt))
+  (sqrt (+ (expt (- (punkt-x prostokat-a) (punkt-x prostokat-b)) 2) (expt (- (punkt-y prostokat-a) (punkt-y prostokat-b)) 2)))
+)
+ 
+(format t "~%")
+(format t "Zadanie 4~%~%")
+
+(setf p (make-instance 'punkt))
+(setf (punkt-x p) 12)
+(setf (punkt-y p) 5)
+ 
+
+(setf k1 (make-instance 'kolo))
+(setf (punkt-x k1) 12)
+(setf (punkt-y k1) 5)
+(setf (kolo-r k1) 10)
+
+(setf pr (make-instance 'prostokat))
+(setf (punkt-x pr) 0)
+(setf (punkt-y pr) 0)
+(setf (prostokat-a pr) 5)
+(setf (prostokat-b pr) 12)
+
+(format t "Punkt (x,y): ")
+(print (punkt-x p))
+(print (punkt-y p))
+   
+(format t "~%Kolo (x,y,r): ")
+(print (punkt-x k))
+(print (punkt-y k))
+(print (kolo-r k))
+
+(format t "~%Prostokat (x,y,a,b): ")
+(print (punkt-x pr))
+(print (punkt-y pr))
+(print (prostokat-a pr))
+(print (prostokat-b pr))
+
+(format t "~%Pole (kolo, prostokat): ")
+(print (pole k))
+(print (pole pr))
+
+(format t "~%Odleglosci (kolo i prostokat), (kolo i punkt): ")
+(print (odl k pr))
+(print (odl k p))
+
+
+
