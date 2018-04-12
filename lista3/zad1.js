@@ -71,7 +71,17 @@ for (let x of pierwsze(10))
 
 
 //Zadanie 3
-function Zadanie3()
+function dividesByDigits(value, digits)
+{
+    for (d of digits) 
+    {
+      if (value % d !== 0)
+        return false;
+    }
+    return true;
+  }
+
+function *Zadanie3(n)
 {
     let index = 0;
     while (index < n) 
@@ -80,7 +90,7 @@ function Zadanie3()
         let digits = String(index).split('').map(char => parseInt(char));
         let digitsSum = digits.reduce((a, b) => a + b, 0);
         if (index % digitsSum === 0 && dividesByDigits(index, digits)) 
-            yield(index);
+            yield index;
     }
 }
 console.log("ZADANIE 3");
