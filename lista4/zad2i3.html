@@ -1,0 +1,29 @@
+<html>
+    <form id="forma">
+        <input name="a" onchange="dzialanie()">
+        <input type ="button" name="znak" disabled="true">
+        <input name="b" onchange="dzialanie()">
+        =<input name="c">
+    </form>
+    <button name="plus">+</button>
+    <button name="minus">-</button>
+    <button name="iloczyn">*</button>
+    <button name="iloraz">/</button>
+
+    <script>
+        var forma = document.getElementById("forma");
+        var przyciski = document.getElementsByTagName("BUTTON");
+        forma.znak.value = "+";
+        function dzialanie()
+        {
+            var wynik = forma.c;
+            var a = forma.a.value;
+            var b = forma.b.value;
+            var znak = forma.znak.value;
+            wynik.value = eval(a + znak + b);
+        }
+        Array.from(przyciski).forEach(button => 
+            button.addEventListener('click', e => 
+                { forma.znak.value = e.target.innerHTML; }))
+    </script>
+</html>

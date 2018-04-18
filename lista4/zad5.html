@@ -1,0 +1,61 @@
+<html>
+        <div id="toc" style="float:right;width:20%;border:1px solid grey"></div>	
+
+        <h1>Pierwszy</h1>
+        <h2>Jeden</h2>
+        <h3>A</h3>
+        <h3>B</h3>
+        <h2>Dwa</h2>
+        <h3>A</h3>
+        <h3>B</h3>
+        <h1>Drugi</h1>
+        <h2>Jeden</h2>
+        <h3>A</h3>
+        <h3>B</h3>
+        <h2>Dwa</h2>
+        <h3>A</h3>
+        <h3>B</h3>
+        <h1>Trzeci</h1>
+        <h2>Jeden</h2>
+        <h3>A</h3>
+        <h3>B</h3>
+        <h2>Dwa</h2>
+        <h3>A</h3>
+        <h3>B</h3>
+        <h2>Jeden</h2>
+        <h3>A</h3>
+        <h3>B</h3>
+        <h2>Dwa</h2>
+        <h3>A</h3>
+        <h3>B</h3>
+        <h1>Czwarty</h1>
+        <h2>Jeden</h2>
+        <h3>A</h3>
+        <h3>B</h3>
+        <h2>Dwa</h2>
+        <h3>A</h3>
+        <h3>B</h3>
+    <script>
+        var toc = document.getElementById("toc");
+        var rozdzialy = Array.from(document.getElementsByTagName("h1"));
+        var podrozdzialy = Array.from(document.getElementsByTagName("h2"));
+        function zrobMenu()
+        {
+            var i =1;
+            toc.innerHTML = "<ol>";
+            for (let r of rozdzialy)
+            {
+                var j = 1;
+                toc.innerHTML += '<li><a href="#' + i + '>Rozdział ' + i + '</a></li>';
+                toc.innerHTML += '<ol>';
+                for (let p of podrozdzialy)
+                {
+                    toc.innerHTML += '<li><a href="#'+i+'-'+j+'">Podrozdział '+i+'.'+j+'</a></li>';
+                }
+                toc.innerHTML += '</ol>';
+            }
+            toc.innerHTML += "</ol>";
+        }
+        zrobMenu();
+    </script>
+</html>
