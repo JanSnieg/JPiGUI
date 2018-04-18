@@ -36,26 +36,22 @@
         <h3>A</h3>
         <h3>B</h3>
     <script>
-        var toc = document.getElementById("toc");
-        var rozdzialy = Array.from(document.getElementsByTagName("h1"));
-        var podrozdzialy = Array.from(document.getElementsByTagName("h2"));
-        function zrobMenu()
-        {
-            var i =1;
-            toc.innerHTML = "<ol>";
-            for (let r of rozdzialy)
-            {
-                var j = 1;
-                toc.innerHTML += '<li><a href="#' + i + '>Rozdział ' + i + '</a></li>';
-                toc.innerHTML += '<ol>';
-                for (let p of podrozdzialy)
-                {
-                    toc.innerHTML += '<li><a href="#'+i+'-'+j+'">Podrozdział '+i+'.'+j+'</a></li>';
-                }
-                toc.innerHTML += '</ol>';
+        (function()
+        {   
+            var toc=document.querySelector("#toc");
+            var t=document.querySelectorAll("h1,h2");
+            var s="";
+            var x,id; 
+            for(var i=0; i<t.length; i++)
+            {   
+                x = t[i];
+                if(x.id)
+                    id = x.id;
+                else 
+                    id = x.id = i; 	
+                s+="<li><a href='#"+id+"'>"+x.innerHTML+"</a></li>";
             }
-            toc.innerHTML += "</ol>";
-        }
-        zrobMenu();
+            toc.innerHTML="<ol>"+s+"</ol>";	
+        })();
     </script>
 </html>
