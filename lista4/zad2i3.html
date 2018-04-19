@@ -24,6 +24,7 @@
         }
         Array.from(przyciski).forEach(button => 
             button.addEventListener('click', e => 
-                { forma.znak.value = e.target.innerHTML; }))
+                { forma.znak.value = e.target.innerHTML;
+                dzialanie();}));
     </script>
 </html>

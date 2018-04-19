@@ -1,5 +1,5 @@
 <html>
-        <div id="toc" style="float:right;width:20%;border:1px solid grey"></div>	
+    <div id="toc" style="float:right;width:20%;border:1px solid grey"></div>
 
         <h1>Pierwszy</h1>
         <h2>Jeden</h2>
@@ -35,23 +35,28 @@
         <h2>Dwa</h2>
         <h3>A</h3>
         <h3>B</h3>
-    <script>
-        (function()
-        {   
-            var toc=document.querySelector("#toc");
-            var t=document.querySelectorAll("h1,h2");
-            var s="";
-            var x,id; 
-            for(var i=0; i<t.length; i++)
-            {   
-                x = t[i];
-                if(x.id)
-                    id = x.id;
-                else 
-                    id = x.id = i; 	
-                s+="<li><a href='#"+id+"'>"+x.innerHTML+"</a></li>";
+    <script> 
+        var toc=document.querySelector("#toc");
+        var s="";
+        let h1Index = 1;
+        let h2Index = 1;
+        let h3Index = 1;
+        Array.from(document.querySelectorAll('h1,h2')).forEach(element =>
+        {
+            if(element.tagName == "H1")
+            {
+                element.id = h1Index;
+                s += "<li><a href='#"+element.id+"'>"+h1Index+": "+element.innerHTML+"</a><ol id='ol-"+element.id+"'></ol></li>";
+                h1Index++;
+                h2Index = 1;
             }
-            toc.innerHTML="<ol>"+s+"</ol>";	
-        })();
+            else if (element.tagName == "H2")
+            {
+                element.id = `${h1Index - 1}-${h2Index}`;
+                s += "<li><a href='#"+element.id+"'>"+h1Index+"."+h2Index+": "+element.innerHTML+"</a><ol id='ol-"+element.id+"'></ol></li>";
+                h2Index++;
+            }
+            toc.innerHTML = "<ol>"+s+"</ol>";
+        });
     </script>
 </html>

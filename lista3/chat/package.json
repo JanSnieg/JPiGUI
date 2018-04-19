@@ -1,0 +1,21 @@
+{
+  "name": "test-node",
+  "version": "1.0.0",
+  "description": "Test node",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Cezary Juszczak",
+  "license": "ISC",
+  "dependencies": {
+    "cookie-parser": "^1.4.3",
+    "ejs": "^2.5.7",
+    "express": "^4.16.3",
+    "express-session": "^1.15.6",
+    "express-static": "^1.2.5",
+    "express-stormpath": "^4.0.0",
+    "html": "^1.0.0",
+    "socket.io": "^1.7.1"
+  }
+}

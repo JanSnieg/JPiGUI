@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <style>
+    body {
+      height: 95vh;
+      overflow: hidden;
+    }
+    .container {
+      height: 300px;
+      width: 500px;
+      display: flex;
+      flex-direction: column;
+      font-family: Arial;
+    }
+    .chat-window {
+      flex:1;
+      display: flex;
+      flex-direction: column-reverse;
+      border: 1px solid grey;
+    }
+    #messages {
+      overflow: scroll;
+      margin: 0;
+      padding: 16px 8px;
+    }
+    .timestamp {
+      margin-right: 16px;
+      color: grey;
+    }
+  </style>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Chat</title>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/appjs.js"></script>
+    <script>
+
+      formatTimestamp = date => {
+        const d = new Date(date);
+        return `${('0' + d.getHours()).slice(-2)}:${('0' + d.getMinutes()).slice(-2)}:${('0' + d.getSeconds()).slice(-2)}`;
+      }
+
+      window.addEventListener('load', () => {
+        const socket = io();
+
+        socket.on('time message', data => {
+          const t = document.getElementById('time');
+          t.innerHTML = data;
+        });
+
+        socket.on('chat message', data => {
+          const msg = document.getElementById('messages');
+          msg.innerHTML += `<li><span class="timestamp">${formatTimestamp(data.timestamp)}</span><b>${data.username}:</b> ${data.message}</li>`;
+        });
+
+        const txtmessage = document.getElementById('txtmessage');
+
+        txtmessage.addEventListener('change', () => {
+          socket.emit('chat message', {timestamp: Date(), message: txtmessage.value});
+          txtmessage.value = '';
+        });
+      })
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <b><span id="time"></span></b>
+      <div class="chat-window">
+        <input type="text" id="txtmessage" placeholder="Your message..."/>
+        <ul id="messages" type="none"></ul>
+      </div>
+    </div>
+  </body>
+</html>
