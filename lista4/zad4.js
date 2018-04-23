@@ -10,7 +10,7 @@ function liczModyfied() {
     var result = [];
     var lista = Array.from(document.getElementsByTagName("a"));
     for (let x of lista)
-        consolelog([x.href, x.innerHTML]);
+        console.log([x.href, x.innerHTML]);
         // result.push([x.href, x.innerHTML]);
 }
 

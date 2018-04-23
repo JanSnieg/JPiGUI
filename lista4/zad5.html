@@ -53,7 +53,7 @@
             else if (element.tagName == "H2")
             {
                 element.id = `${h1Index - 1}-${h2Index}`;
-                s += "<li><a href='#"+element.id+"'>"+h1Index+"."+h2Index+": "+element.innerHTML+"</a><ol id='ol-"+element.id+"'></ol></li>";
+                s += "<li><a href='#"+element.id+"'>\t"+h1Index+"."+h2Index+": "+element.innerHTML+"</a><ol id='ol-"+element.id+"'></ol></li>";
                 h2Index++;
             }
             toc.innerHTML = "<ol>"+s+"</ol>";

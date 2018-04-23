@@ -13,7 +13,7 @@ app.use(cookieParser('sgs90890s8g90as8rg90as8g9r8a0srg8'));
 app.set('view engine', 'ejs')
 app.set('views', './views')
 
-var server = http.createServer(app);
+// var server = express.createServer(app);
 var io = socket(server);
 
 
@@ -59,7 +59,7 @@ function authorize(req, res, next) {
     res.redirect('/login?returnUrl=' + req.url);
   }
 }
-// http.createServer(app).listen(8080);
-server.listen(process.env.PORT || 8080)
+http.createServer(app).listen(8080);
+// server.listen(process.env.PORT || 8080)
 console.log('serwer działa, nawiguj do http://localhost:8080');
 
