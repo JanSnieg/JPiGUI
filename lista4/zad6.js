@@ -64,6 +64,6 @@ class Polygon extends Point
     }
     contains(x, y)
     {
-        //Nie potrafiłem tego zrobić
+       
     }
 }

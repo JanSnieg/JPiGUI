@@ -6,6 +6,7 @@ namespace lista5
     {
         static void Main(string[] args)
         {
+            //ZADANIE 1
             Console.WriteLine("Podaj liczbe naturalną: ");
             int n = Convert.ToInt32(Console.ReadLine());
             string result =  "";
@@ -18,6 +19,14 @@ namespace lista5
                 result += string.Format("\n");
             }
             Console.Write(result);
+            //ZADANIE 2
+            Calkowite liczba = new Calkowite(5);
+            for(int i=0; i<10; i++)
+            {
+                liczba.WypiszStan();
+                liczba.Liczba = i*i;
+                Console.WriteLine(liczba.Liczba);
+            }
         }
     }
 }
