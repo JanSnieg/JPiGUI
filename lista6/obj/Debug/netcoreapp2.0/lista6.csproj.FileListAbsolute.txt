@@ -1,0 +1,10 @@
+/Users/jansnieg/Documents/ISSP6/JPiGUI/lista6/bin/Debug/netcoreapp2.0/lista6.deps.json
+/Users/jansnieg/Documents/ISSP6/JPiGUI/lista6/bin/Debug/netcoreapp2.0/lista6.runtimeconfig.json
+/Users/jansnieg/Documents/ISSP6/JPiGUI/lista6/bin/Debug/netcoreapp2.0/lista6.runtimeconfig.dev.json
+/Users/jansnieg/Documents/ISSP6/JPiGUI/lista6/bin/Debug/netcoreapp2.0/lista6.dll
+/Users/jansnieg/Documents/ISSP6/JPiGUI/lista6/bin/Debug/netcoreapp2.0/lista6.pdb
+/Users/jansnieg/Documents/ISSP6/JPiGUI/lista6/obj/Debug/netcoreapp2.0/lista6.csproj.CoreCompileInputs.cache
+/Users/jansnieg/Documents/ISSP6/JPiGUI/lista6/obj/Debug/netcoreapp2.0/lista6.AssemblyInfoInputs.cache
+/Users/jansnieg/Documents/ISSP6/JPiGUI/lista6/obj/Debug/netcoreapp2.0/lista6.AssemblyInfo.cs
+/Users/jansnieg/Documents/ISSP6/JPiGUI/lista6/obj/Debug/netcoreapp2.0/lista6.dll
+/Users/jansnieg/Documents/ISSP6/JPiGUI/lista6/obj/Debug/netcoreapp2.0/lista6.pdb
