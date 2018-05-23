@@ -17,7 +17,10 @@ namespace lista5
                     return liczba;
                 }
                 else
-                return -1;
+                {
+                    Console.Write("Nieautoryzowana próba wyjścia!\n");
+                    return -1;
+                }
             }
             set
             {
@@ -26,6 +29,8 @@ namespace lista5
                     countIn++;
                     liczba = value;
                 }
+                else
+                    Console.Write("Nieautoryzowana próba wejścia!\n");
             }
         }
         public Calkowite(int value)

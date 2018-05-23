@@ -8,3 +8,4 @@
 /Users/jansnieg/Documents/ISSP6/JPiGUI/lista6/obj/Debug/netcoreapp2.0/lista6.AssemblyInfo.cs
 /Users/jansnieg/Documents/ISSP6/JPiGUI/lista6/obj/Debug/netcoreapp2.0/lista6.dll
 /Users/jansnieg/Documents/ISSP6/JPiGUI/lista6/obj/Debug/netcoreapp2.0/lista6.pdb
+/Users/jansnieg/Documents/ISSP6/JPiGUI/lista6/obj/Debug/netcoreapp2.0/lista6.csprojResolveAssemblyReference.cache

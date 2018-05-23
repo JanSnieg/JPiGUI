@@ -21,12 +21,15 @@ namespace lista5
             Console.Write(result);
             //ZADANIE 2
             Calkowite liczba = new Calkowite(5);
-            for(int i=0; i<10; i++)
+            for(int i=0; i<6; i++)
             {
                 liczba.WypiszStan();
                 liczba.Liczba = i*i;
                 Console.WriteLine(liczba.Liczba);
             }
+            liczba.Ureguluj();
+            liczba.Liczba = 15;
+            liczba.WypiszStan();
         }
     }
 }

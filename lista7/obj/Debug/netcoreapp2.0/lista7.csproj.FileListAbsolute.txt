@@ -1,0 +1,11 @@
+/Users/jansnieg/Documents/ISSP6/JPiGUI/lista7/bin/Debug/netcoreapp2.0/lista7.deps.json
+/Users/jansnieg/Documents/ISSP6/JPiGUI/lista7/bin/Debug/netcoreapp2.0/lista7.runtimeconfig.json
+/Users/jansnieg/Documents/ISSP6/JPiGUI/lista7/bin/Debug/netcoreapp2.0/lista7.runtimeconfig.dev.json
+/Users/jansnieg/Documents/ISSP6/JPiGUI/lista7/bin/Debug/netcoreapp2.0/lista7.dll
+/Users/jansnieg/Documents/ISSP6/JPiGUI/lista7/bin/Debug/netcoreapp2.0/lista7.pdb
+/Users/jansnieg/Documents/ISSP6/JPiGUI/lista7/obj/Debug/netcoreapp2.0/lista7.csprojResolveAssemblyReference.cache
+/Users/jansnieg/Documents/ISSP6/JPiGUI/lista7/obj/Debug/netcoreapp2.0/lista7.csproj.CoreCompileInputs.cache
+/Users/jansnieg/Documents/ISSP6/JPiGUI/lista7/obj/Debug/netcoreapp2.0/lista7.AssemblyInfoInputs.cache
+/Users/jansnieg/Documents/ISSP6/JPiGUI/lista7/obj/Debug/netcoreapp2.0/lista7.AssemblyInfo.cs
+/Users/jansnieg/Documents/ISSP6/JPiGUI/lista7/obj/Debug/netcoreapp2.0/lista7.dll
+/Users/jansnieg/Documents/ISSP6/JPiGUI/lista7/obj/Debug/netcoreapp2.0/lista7.pdb
