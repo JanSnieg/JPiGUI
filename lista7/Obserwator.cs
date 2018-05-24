@@ -19,6 +19,7 @@ namespace lista7 {
             this.nazwa = "Obs " + nazwa_tyl.ToString ();
             this.x = rand.NextDouble ();
             this.y = rand.NextDouble ();
+            this.sasiedzi = new List<Obserwator> ();
 
             nazwa_tyl++;
         }
@@ -39,27 +40,17 @@ namespace lista7 {
             else
                 return 0;
         }
-        public void nowy_obserwator_event (List<Obserwator> them) {
-            this.sasiedzi = new List<Obserwator>();
-            Console.WriteLine("1: " + them.Count);
+        public void nowy_obserwator_event (Obserwator He) {
             // Jezeli lista jest pusta to nic sie nie dzieje
-            if (them.Count == 0)
+            if (this.nazwa == He.nazwa)
                 return;
-            // Usuwanie siebie samego z listy obserwatorow (funkcja anonimowa)
-            them.RemoveAll (item => item.nazwa.Equals(this.nazwa));
-            Console.WriteLine("2: " + them.Count);
-            // Odleglość wszystkich obserwatorow od siebie
-            foreach (var obs in them)
-                obs.oblicz_dystans (this);
-            // sortowanie wzgledem odleglosci
-            them.Sort ();
-            int ilosc_do_dodania;
+
+            He.oblicz_dystans (this);
+            sasiedzi.Add (He);
+            sasiedzi.Sort ();
             // wybieranie dwóch najbliszych, lub mniej najblizszych
-            if (them.Count < 2)
-                ilosc_do_dodania = them.Count;
-            else
-                ilosc_do_dodania = 2;
-            this.sasiedzi = them.GetRange (0, ilosc_do_dodania);
+            if (sasiedzi.Count > 2)
+                sasiedzi.RemoveAt (2);
         }
         public void przedstaw_sie_event () {
             Console.WriteLine ("Jestem " + nazwa + " - lista sąsiadów:");
