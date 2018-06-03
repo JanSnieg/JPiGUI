@@ -28,9 +28,6 @@ namespace lista7 {
         public void oblicz_dystans (Obserwator other) {
             this.dystans = Math.Sqrt (Math.Pow (this.x - other.x, 2) + Math.Pow (this.y - other.y, 2));
         }
-        public double odleglosc (Obserwator other) {
-            return Math.Sqrt (Math.Pow (this.x - other.x, 2) + Math.Pow (this.y - other.y, 2));
-        }
         // Porównywarka
         public int CompareTo (Obserwator other) {
             if (this.dystans < other.dystans)
@@ -42,20 +39,22 @@ namespace lista7 {
         }
         public void nowy_obserwator_event (Obserwator He) {
             // Jezeli lista jest pusta to nic sie nie dzieje
-            if (this.nazwa == He.nazwa)
-                return;
+            // if (this.nazwa == He.nazwa)
+            //     return;
 
-            He.oblicz_dystans (this);
-            sasiedzi.Add (He);
+            this.sasiedzi.Add (He);
+            foreach (var sasiad in sasiedzi)
+                sasiad.oblicz_dystans (this);
             sasiedzi.Sort ();
             // wybieranie dwóch najbliszych, lub mniej najblizszych
-            if (sasiedzi.Count > 2)
-                sasiedzi.RemoveAt (2);
+            // if (sasiedzi.Count > 2)
+            //     sasiedzi.RemoveAt (sasiedzi.Count - 1);
         }
         public void przedstaw_sie_event () {
             Console.WriteLine ("Jestem " + nazwa + " - lista sąsiadów:");
             foreach (var sasiad in this.sasiedzi)
-                Console.WriteLine ("{0}\tx= {1:F3}\ty= {2:F3}\todl={3:F3}", sasiad.nazwa, sasiad.x, sasiad.y, odleglosc (sasiad));
+                Console.WriteLine ("{0}\tx= {1:F3}\ty= {2:F3}\todl={3:F3}", sasiad.nazwa, sasiad.x, sasiad.y, sasiad.dystans);
+            Console.WriteLine ("");
         }
     }
 }
